@@ -1,0 +1,31 @@
+{
+  "name": "shop-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@angular-devkit/build-angular:protractor",
+      "options": {
+        "protractorConfig": "apps/shop-e2e/protractor.conf.js"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "shop:serve:production"
+        },
+        "development": {
+          "devServerTarget": "shop:serve:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/shop-e2e/**/*.ts"]
+      }
+    }
+  },
+  "implicitDependencies": ["shop"],
+  "tags": []
+}
