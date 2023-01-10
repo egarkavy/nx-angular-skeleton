@@ -1,0 +1,28 @@
+{
+  "name": "shop-catalog-util",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/shop/catalog/util/src",
+  "prefix": "dev-team-monorepo",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "tsConfig": "packages/shop/catalog/util/tsconfig.spec.json",
+        "karmaConfig": "packages/shop/catalog/util/karma.conf.js",
+        "polyfills": ["zone.js", "zone.js/testing"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/shop/catalog/util/**/*.ts",
+          "packages/shop/catalog/util/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

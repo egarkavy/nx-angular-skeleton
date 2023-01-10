@@ -1,0 +1,28 @@
+{
+  "name": "shop-checkout-data-access",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/shop/checkout/data-access/src",
+  "prefix": "dev-team-monorepo",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "tsConfig": "packages/shop/checkout/data-access/tsconfig.spec.json",
+        "karmaConfig": "packages/shop/checkout/data-access/karma.conf.js",
+        "polyfills": ["zone.js", "zone.js/testing"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/shop/checkout/data-access/**/*.ts",
+          "packages/shop/checkout/data-access/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

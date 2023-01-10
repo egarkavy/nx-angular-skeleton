@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@dev-team-monorepo/shop/catalog/data-access": [
+        "packages/shop/catalog/data-access/src/index.ts"
+      ],
       "@dev-team-monorepo/shop/catalog/feature-shell": [
         "packages/shop/catalog/feature-shell/src/index.ts"
       ],
@@ -24,6 +27,15 @@
       "@dev-team-monorepo/shop/catalog/feature/item-list": [
         "packages/shop/catalog/feature/item-list/src/index.ts"
       ],
+      "@dev-team-monorepo/shop/catalog/ui": [
+        "packages/shop/catalog/ui/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/catalog/util": [
+        "packages/shop/catalog/util/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/checkout/data-access": [
+        "packages/shop/checkout/data-access/src/index.ts"
+      ],
       "@dev-team-monorepo/shop/checkout/feature-shell": [
         "packages/shop/checkout/feature-shell/src/index.ts"
       ],
@@ -32,6 +44,12 @@
       ],
       "@dev-team-monorepo/shop/checkout/feature/checkout": [
         "packages/shop/checkout/feature/checkout/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/checkout/ui": [
+        "packages/shop/checkout/ui/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/checkout/util": [
+        "packages/shop/checkout/util/src/index.ts"
       ]
     }
   },
