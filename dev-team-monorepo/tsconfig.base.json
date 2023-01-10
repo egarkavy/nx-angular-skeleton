@@ -15,8 +15,23 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@dev-team-monorepo/shop/cart/feature-shell": [
-        "packages/shop/cart/feature-shell/src/index.ts"
+      "@dev-team-monorepo/shop/catalog/feature-shell": [
+        "packages/shop/catalog/feature-shell/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/catalog/feature/compare-items": [
+        "packages/shop/catalog/feature/compare-items/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/catalog/feature/item-list": [
+        "packages/shop/catalog/feature/item-list/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/checkout/feature-shell": [
+        "packages/shop/checkout/feature-shell/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/checkout/feature/cart": [
+        "packages/shop/checkout/feature/cart/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/checkout/feature/checkout": [
+        "packages/shop/checkout/feature/checkout/src/index.ts"
       ]
     }
   },

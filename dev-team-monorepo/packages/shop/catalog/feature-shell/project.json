@@ -1,15 +1,15 @@
 {
-  "name": "shop-cart-feature-shell",
+  "name": "shop-catalog-feature-shell",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "packages/shop/cart/feature-shell/src",
+  "sourceRoot": "packages/shop/catalog/feature-shell/src",
   "prefix": "dev-team-monorepo",
   "targets": {
     "test": {
       "executor": "@angular-devkit/build-angular:karma",
       "options": {
-        "tsConfig": "packages/shop/cart/feature-shell/tsconfig.spec.json",
-        "karmaConfig": "packages/shop/cart/feature-shell/karma.conf.js",
+        "tsConfig": "packages/shop/catalog/feature-shell/tsconfig.spec.json",
+        "karmaConfig": "packages/shop/catalog/feature-shell/karma.conf.js",
         "polyfills": ["zone.js", "zone.js/testing"]
       }
     },
@@ -18,8 +18,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "packages/shop/cart/feature-shell/**/*.ts",
-          "packages/shop/cart/feature-shell/**/*.html"
+          "packages/shop/catalog/feature-shell/**/*.ts",
+          "packages/shop/catalog/feature-shell/**/*.html"
         ]
       }
     }

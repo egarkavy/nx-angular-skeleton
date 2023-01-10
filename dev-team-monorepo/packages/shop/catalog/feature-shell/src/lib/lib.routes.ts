@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
 
-export const shopCartFeatureShellRoutes: Route[] = [
+export const shopCatalogFeatureShellRoutes: Route[] = [
   /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
 ];
