@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@dev-team-monorepo/common/util": ["packages/common/util/src/index.ts"],
       "@dev-team-monorepo/shop/catalog/data-access": [
         "packages/shop/catalog/data-access/src/index.ts"
       ],
@@ -50,6 +51,12 @@
       ],
       "@dev-team-monorepo/shop/checkout/util": [
         "packages/shop/checkout/util/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/common/feature": [
+        "packages/shop/common/feature/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/core/feature": [
+        "packages/shop/core/feature/src/index.ts"
       ]
     }
   },

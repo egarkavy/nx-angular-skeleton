@@ -1,0 +1,28 @@
+{
+  "name": "common-util",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/common/util/src",
+  "prefix": "dev-team-monorepo",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "tsConfig": "packages/common/util/tsconfig.spec.json",
+        "karmaConfig": "packages/common/util/karma.conf.js",
+        "polyfills": ["zone.js", "zone.js/testing"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/common/util/**/*.ts",
+          "packages/common/util/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

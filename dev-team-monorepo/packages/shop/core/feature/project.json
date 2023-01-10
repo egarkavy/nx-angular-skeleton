@@ -1,0 +1,28 @@
+{
+  "name": "shop-core-feature",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/shop/core/feature/src",
+  "prefix": "dev-team-monorepo",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "tsConfig": "packages/shop/core/feature/tsconfig.spec.json",
+        "karmaConfig": "packages/shop/core/feature/karma.conf.js",
+        "polyfills": ["zone.js", "zone.js/testing"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/shop/core/feature/**/*.ts",
+          "packages/shop/core/feature/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

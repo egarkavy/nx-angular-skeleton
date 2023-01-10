@@ -1,0 +1,1 @@
+export const getItemsPath = 'catalog/get-items';
