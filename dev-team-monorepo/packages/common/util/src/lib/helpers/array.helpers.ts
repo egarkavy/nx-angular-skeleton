@@ -45,40 +45,7 @@ export class ArrayHelpers {
 
                 return acc;
             },
-            { matching: [], notMatching: [] },
+            <{ matching: A[], notMatching: A[] }>{ matching: [], notMatching: [] },
         );
-    }
-
-    public static toSameSize<TMain, TToAdjust>(
-        main: TMain[],
-        toAdjust: TToAdjust[],
-        options: {
-            mutateOriginal: boolean;
-            toElementGenerator: (mainElement: TMain) => TToAdjust;
-            customPush?: (toAdjust: TToAdjust[], mainElement: TMain) => void;
-            customSplice?: (toAdjust: TToAdjust[], start: number, deleteCount: number) => void;
-        },
-    ): TToAdjust[] {
-        if (main.length === toAdjust.length) {
-            return toAdjust;
-        }
-
-        if (options?.mutateOriginal) {
-            if (main.length < toAdjust.length) {
-                options.customSplice
-                    ? options.customSplice(toAdjust, main.length, toAdjust.length)
-                    : toAdjust.splice(main.length, toAdjust.length);
-
-                return toAdjust;
-            }
-
-            for (let i = toAdjust.length; i < main.length; i++) {
-                options.customPush
-                    ? options.customPush(toAdjust, main[i])
-                    : toAdjust.push(options?.toElementGenerator ? options.toElementGenerator(main[i]) : undefined);
-            }
-
-            return toAdjust;
-        }
     }
 }

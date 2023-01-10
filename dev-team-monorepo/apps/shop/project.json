@@ -7,16 +7,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/shop",
         "index": "apps/shop/src/index.html",
         "main": "apps/shop/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/shop/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/shop/src/favicon.ico", "apps/shop/src/assets"],
-        "styles": ["apps/shop/src/styles.scss"],
+        "assets": [
+          "apps/shop/src/favicon.ico",
+          "apps/shop/src/assets"
+        ],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/shop/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -66,9 +76,14 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/shop/**/*.ts", "apps/shop/**/*.html"]
+        "lintFilePatterns": [
+          "apps/shop/**/*.ts",
+          "apps/shop/**/*.html"
+        ]
       }
     },
     "test": {
@@ -76,8 +91,13 @@
       "options": {
         "tsConfig": "apps/shop/tsconfig.spec.json",
         "karmaConfig": "apps/shop/karma.conf.js",
-        "polyfills": ["zone.js", "zone.js/testing"],
-        "styles": [],
+        "polyfills": [
+          "zone.js",
+          "zone.js/testing"
+        ],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css"
+        ],
         "scripts": [],
         "assets": []
       }

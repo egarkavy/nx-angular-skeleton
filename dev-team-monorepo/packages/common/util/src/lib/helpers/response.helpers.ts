@@ -16,7 +16,6 @@ export class ResponseHelpers {
         return new HttpResponse<ResponseModel<null>>({
             body: {
                 success: false,
-                status: response.status,
                 data: null,
                 message,
             },

@@ -1,6 +1,5 @@
 import { concat, Observable, of, pipe, Subscriber, UnaryFunction } from 'rxjs';
 import { debounceTime, delay, distinctUntilChanged, map, reduce, switchMap } from 'rxjs/operators';
-import { HTTP_STATUS_CODE } from '../enums';
 import { ResponseModel } from '../models';
 
 /**
@@ -12,8 +11,8 @@ export function protectFromSpam<T>(multiply: number = 1): UnaryFunction<Observab
 
 export function mapResponseModelToAnother<T, R>(response: ResponseModel<T>, mapFn?: (r: T) => R, errMapFn?: () => R): ResponseModel<R> {
     return response.success
-        ? { ...response, data: mapFn ? mapFn(response.data) : null }
-        : {
+        ? <ResponseModel<R>>{ ...response, data: mapFn ? mapFn(response.data) : null }
+        : <ResponseModel<R>>{
               ...response,
               data: errMapFn ? errMapFn() : null,
           };
@@ -44,7 +43,6 @@ export function mergeResponses<T>(): UnaryFunction<Observable<ResponseModel<T>[]
                 data: responses.map((r) => r.data),
                 success: !firstError,
                 message: firstError?.message,
-                status: firstError?.status || HTTP_STATUS_CODE.OK,
             };
         }),
     );

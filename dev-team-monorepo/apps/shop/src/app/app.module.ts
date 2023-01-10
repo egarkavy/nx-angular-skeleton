@@ -4,6 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { AppRoutingModule } from './app-routing.module';
+import { ShopCoreFeatureModule } from '@dev-team-monorepo/shop/core/feature';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +29,11 @@ import { EffectsModule } from '@ngrx/effects';
       }
     ),
     EffectsModule.forRoot([]),
+    ShopCoreFeatureModule.forRoot(),
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

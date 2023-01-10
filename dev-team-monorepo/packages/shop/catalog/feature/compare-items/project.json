@@ -10,12 +10,17 @@
       "options": {
         "tsConfig": "packages/shop/catalog/feature/compare-items/tsconfig.spec.json",
         "karmaConfig": "packages/shop/catalog/feature/compare-items/karma.conf.js",
-        "polyfills": ["zone.js", "zone.js/testing"]
+        "polyfills": [
+          "zone.js",
+          "zone.js/testing"
+        ]
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "packages/shop/catalog/feature/compare-items/**/*.ts",

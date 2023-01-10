@@ -10,12 +10,17 @@
       "options": {
         "tsConfig": "packages/shop/checkout/ui/tsconfig.spec.json",
         "karmaConfig": "packages/shop/checkout/ui/karma.conf.js",
-        "polyfills": ["zone.js", "zone.js/testing"]
+        "polyfills": [
+          "zone.js",
+          "zone.js/testing"
+        ]
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "packages/shop/checkout/ui/**/*.ts",
