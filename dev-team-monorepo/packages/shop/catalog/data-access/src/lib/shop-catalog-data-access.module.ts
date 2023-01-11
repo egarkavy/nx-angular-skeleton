@@ -2,24 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import * as fromItems from './+state/items/items.reducer';
 import { ItemsEffects } from './+state/items/items.effects';
 import { ItemsFacade } from './+state/items/items.facade';
-import * as fromCheckout from './+state/checkout/checkout.reducer';
-import { CheckoutEffects } from './+state/checkout/checkout.effects';
-import { CheckoutFacade } from './+state/checkout/checkout.facade';
+import { ShopCatalogUtilModule } from '@dev-team-monorepo/shop/catalog/util';
+import { shopCatalogFeatureReducers, SHOP_CATALOG_FEATURE_KEY, SHOP_CATALOG_FEATURE_REDUCERS } from './+state/shop-catalog.state';
 
 @NgModule({
   imports: [
     CommonModule,
-    StoreModule.forFeature(fromItems.ITEMS_FEATURE_KEY, fromItems.itemsReducer),
+    StoreModule.forFeature(SHOP_CATALOG_FEATURE_KEY.FEATURE, SHOP_CATALOG_FEATURE_REDUCERS),
     EffectsModule.forFeature([ItemsEffects]),
-    StoreModule.forFeature(
-      fromCheckout.CHECKOUT_FEATURE_KEY,
-      fromCheckout.checkoutReducer
-    ),
-    EffectsModule.forFeature([CheckoutEffects]),
+    ShopCatalogUtilModule
   ],
-  providers: [ItemsFacade, CheckoutFacade],
+  providers: [ItemsFacade, {
+    provide: SHOP_CATALOG_FEATURE_REDUCERS,
+    useValue: shopCatalogFeatureReducers,
+}],
 })
 export class ShopCatalogDataAccessModule {}

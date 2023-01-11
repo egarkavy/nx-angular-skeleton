@@ -9,7 +9,7 @@ export class ItemsApiService {
 
   constructor(private readonly apiService: ApiService) { }
 
-  getItems(): Observable<ResponseModel<CatalogItem>> {
-    return this.apiService.get<CatalogItem>(getItemsPath);
+  getItems(): Observable<ResponseModel<CatalogItem[]>> {
+    return this.apiService.get<CatalogItem[]>(getItemsPath);
   }
 }

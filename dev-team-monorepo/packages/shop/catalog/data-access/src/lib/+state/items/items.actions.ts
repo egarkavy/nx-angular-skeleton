@@ -1,14 +1,6 @@
 import { createAction, props } from '@ngrx/store';
-import { ItemsEntity } from './items.models';
+import { CatalogItem } from '@dev-team-monorepo/shop/catalog/util'
 
-export const initItems = createAction('[Items Page] Init');
-
-export const loadItemsSuccess = createAction(
-  '[Items/API] Load Items Success',
-  props<{ items: ItemsEntity[] }>()
-);
-
-export const loadItemsFailure = createAction(
-  '[Items/API] Load Items Failure',
-  props<{ error: any }>()
-);
+export const requestItems = createAction('[Items] requestItems');
+export const requestItemsSuccess = createAction('[Items] requestItemsSuccess', props<{ items: CatalogItem[] }>());
+export const requestItemsError = createAction('[Items] requestItemsError', props<{ error: string }>());

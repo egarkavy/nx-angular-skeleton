@@ -3,7 +3,7 @@
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "packages/shop/catalog/util/src",
-  "prefix": "dev-team-monorepo",
+  "prefix": "shop",
   "targets": {
     "test": {
       "executor": "@angular-devkit/build-angular:karma",

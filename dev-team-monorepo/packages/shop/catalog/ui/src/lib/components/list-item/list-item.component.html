@@ -1,0 +1,12 @@
+<div *ngIf="item">
+    <div class="flex">
+        <img [src]="item.img">
+        <div>
+            <span>{{item.name}}</span>
+        </div>
+    </div>
+    
+    <button mat-button color="primary" (click)="changeInCart.emit(!isAddedToCart)">{{isAddedToCart ? 'Remove from' : 'Add to'}} cart</button>
+    <button mat-button color="accent" (click)="instantBuy.emit()">BUY NOW!!!</button>
+    <!-- <button mat-flat-button color="primary" (click)="changeInCart.emit(!isAddedToCart)">Add to compare</button> -->
+</div>

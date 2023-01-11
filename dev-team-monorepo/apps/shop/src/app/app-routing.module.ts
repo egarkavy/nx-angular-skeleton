@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { EmptyComponent } from './emprty/emprty.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
                 (module: typeof import('@dev-team-monorepo/shop/checkout/feature-shell')) => module.ShopCheckoutFeatureShellModule,
             ),
     },
+    {
+        path: '**',
+        component: EmptyComponent
+    }
 ];
 
 @NgModule({

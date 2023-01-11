@@ -16,6 +16,15 @@
     "baseUrl": ".",
     "paths": {
       "@dev-team-monorepo/common/util": ["packages/common/util/src/index.ts"],
+      "@dev-team-monorepo/shop/cart/data-access": [
+        "packages/shop/cart/data-access/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/cart/feature/cart-summary": [
+        "packages/shop/cart/feature/cart-summary/src/index.ts"
+      ],
+      "@dev-team-monorepo/shop/cart/util": [
+        "packages/shop/cart/util/src/index.ts"
+      ],
       "@dev-team-monorepo/shop/catalog/data-access": [
         "packages/shop/catalog/data-access/src/index.ts"
       ],

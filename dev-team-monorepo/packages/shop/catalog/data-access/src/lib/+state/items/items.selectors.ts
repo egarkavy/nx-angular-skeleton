@@ -1,39 +1,16 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { ITEMS_FEATURE_KEY, ItemsState, itemsAdapter } from './items.reducer';
+import { createSelector, MemoizedSelector } from '@ngrx/store';
+import { getFeature } from '../shop-catalog.selectors';
+import { ShopCatalogFeaturePartialState, ShopCatalogFeatureState, SHOP_CATALOG_FEATURE_STATE_KEY } from '../shop-catalog.state';
+import { ItemsState, itemsAdapter } from './items.reducer';
 
-// Lookup the 'Items' feature state managed by NgRx
-export const selectItemsState =
-  createFeatureSelector<ItemsState>(ITEMS_FEATURE_KEY);
-
-const { selectAll, selectEntities } = itemsAdapter.getSelectors();
-
-export const selectItemsLoaded = createSelector(
-  selectItemsState,
-  (state: ItemsState) => state.loaded
+const getState: MemoizedSelector<ShopCatalogFeaturePartialState, ItemsState> = createSelector(
+  getFeature,
+  (state: ShopCatalogFeatureState) => state[SHOP_CATALOG_FEATURE_STATE_KEY.ITEMS],
 );
 
-export const selectItemsError = createSelector(
-  selectItemsState,
-  (state: ItemsState) => state.error
-);
+export const { selectAll: selectAllItems, selectEntities: selectItemsEntities } = itemsAdapter.getSelectors(getState);
 
-export const selectAllItems = createSelector(
-  selectItemsState,
-  (state: ItemsState) => selectAll(state)
-);
-
-export const selectItemsEntities = createSelector(
-  selectItemsState,
-  (state: ItemsState) => selectEntities(state)
-);
-
-export const selectSelectedId = createSelector(
-  selectItemsState,
-  (state: ItemsState) => state.selectedId
-);
-
-export const selectEntity = createSelector(
-  selectItemsEntities,
-  selectSelectedId,
-  (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
+export const selectStatus = createSelector(
+  getState,
+  (state: ItemsState) => state.status
 );

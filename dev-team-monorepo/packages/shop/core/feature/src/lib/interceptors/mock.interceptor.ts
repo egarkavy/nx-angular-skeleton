@@ -7,6 +7,7 @@ import {
   HttpResponse
 } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators'
 import { getItemsPath } from '@dev-team-monorepo/shop/catalog/util';
 import { catalogItems } from './mock-responses/items-response.constant';
 
@@ -19,7 +20,9 @@ export class MockInterceptor implements HttpInterceptor {
       return of(new HttpResponse({
         status: 200,
         body: catalogItems,
-      }))
+      })).pipe(
+        delay(500)
+      )
     }
 
     return next.handle(request).pipe();

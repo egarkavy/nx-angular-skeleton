@@ -1,0 +1,28 @@
+{
+  "name": "shop-cart-feature-cart-summary",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/shop/cart/feature/cart-summary/src",
+  "prefix": "shop",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "tsConfig": "packages/shop/cart/feature/cart-summary/tsconfig.spec.json",
+        "karmaConfig": "packages/shop/cart/feature/cart-summary/karma.conf.js",
+        "polyfills": ["zone.js", "zone.js/testing"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/shop/cart/feature/cart-summary/**/*.ts",
+          "packages/shop/cart/feature/cart-summary/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

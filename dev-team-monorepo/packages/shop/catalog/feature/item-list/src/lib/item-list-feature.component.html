@@ -1,0 +1,16 @@
+<ng-container *ngIf="allCartDict$ | async as allCartDict">
+    <ng-container *ngIf="(status$ | async) === modelStatus.Success; else loadingTemplate">
+        <shop-list-item 
+            *ngFor="let item of items$ | async"
+            [item]="item"
+            [isAddedToCart]="allCartDict[item.id] !== undefined"
+            (changeInCart)="changeInCart($event, item)"
+            (instantBuy)="instantBuy(item)"
+        >
+
+        </shop-list-item>
+    </ng-container>
+</ng-container>
+<ng-template #loadingTemplate>
+    <mat-spinner></mat-spinner>
+</ng-template>

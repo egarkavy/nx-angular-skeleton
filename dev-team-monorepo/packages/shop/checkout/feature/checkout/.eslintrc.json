@@ -17,7 +17,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "dev-team-monorepo",
+            "prefix": "shop",
             "style": "kebab-case"
           }
         ]

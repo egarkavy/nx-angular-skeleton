@@ -27,18 +27,9 @@ export const initialCheckoutState: CheckoutState =
 
 const reducer = createReducer(
   initialCheckoutState,
-  on(CheckoutActions.initCheckout, (state) => ({
-    ...state,
-    loaded: false,
-    error: null,
-  })),
-  on(CheckoutActions.loadCheckoutSuccess, (state, { checkout }) =>
-    checkoutAdapter.setAll(checkout, { ...state, loaded: true })
+  on(CheckoutActions.initCheckout, (state, { items }) =>
+    checkoutAdapter.setAll(items, { ...state, loaded: true })
   ),
-  on(CheckoutActions.loadCheckoutFailure, (state, { error }) => ({
-    ...state,
-    error,
-  }))
 );
 
 export function checkoutReducer(
