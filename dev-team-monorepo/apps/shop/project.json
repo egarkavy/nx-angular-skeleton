@@ -103,5 +103,5 @@
       }
     }
   },
-  "tags": []
+  "tags": ["scope:app"]
 }
