@@ -3,6 +3,7 @@ export type CatalogItem = {
     name: string;
     price: number;
     img: string;
+    slogan: string;
     specs: {
         height: number;
         weight: number;

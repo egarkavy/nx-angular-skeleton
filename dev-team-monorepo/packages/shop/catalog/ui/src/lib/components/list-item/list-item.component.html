@@ -1,12 +1,23 @@
-<div *ngIf="item">
+<mat-card class="my-2" *ngIf="item">
     <div class="flex">
         <img [src]="item.img">
-        <div>
-            <span>{{item.name}}</span>
+        <div class="flex flex-col">
+            <span><b>Name:</b> {{item.name}}</span>
+            <span><b>Height:</b> {{item.specs.height}}</span>
+            <span><b>Rating:</b> {{item.specs.rating}}/5</span>
         </div>
     </div>
+    <p>
+        <span><b>Slogan:</b> {{item.slogan}}</span>
+    </p>
+    <div>
+        <span><b>Price:</b> {{item.price}} bucks</span>
+    </div>
+
+    <div class="my-4">
+        <button class="mr-2" mat-button color="primary" (click)="changeInCart.emit(!isAddedToCart)">{{isAddedToCart ? 'Remove from' : 'Add to'}} cart</button>
+        <button mat-button color="accent" (click)="instantBuy.emit()">BUY NOW!!!</button>
+    </div>
     
-    <button mat-button color="primary" (click)="changeInCart.emit(!isAddedToCart)">{{isAddedToCart ? 'Remove from' : 'Add to'}} cart</button>
-    <button mat-button color="accent" (click)="instantBuy.emit()">BUY NOW!!!</button>
     <!-- <button mat-flat-button color="primary" (click)="changeInCart.emit(!isAddedToCart)">Add to compare</button> -->
-</div>
+</mat-card>
