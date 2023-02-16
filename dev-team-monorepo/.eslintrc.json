@@ -13,7 +13,7 @@
             "depConstraints": [
               {
                 "sourceTag": "scope:app",
-                "onlyDependOnLibsWithTags": ["type:feature", "type:feature-shell", "*"]
+                "onlyDependOnLibsWithTags": ["type:feature", "type:feature-shell", "type:data"]
               },
               {
                 "sourceTag": "scope:shop",

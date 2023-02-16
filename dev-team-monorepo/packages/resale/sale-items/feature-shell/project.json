@@ -1,0 +1,28 @@
+{
+  "name": "resale-sale-items-feature-shell",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/resale/sale-items/feature-shell/src",
+  "prefix": "dev-team-monorepo",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "tsConfig": "packages/resale/sale-items/feature-shell/tsconfig.spec.json",
+        "karmaConfig": "packages/resale/sale-items/feature-shell/karma.conf.js",
+        "polyfills": ["zone.js", "zone.js/testing"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/resale/sale-items/feature-shell/**/*.ts",
+          "packages/resale/sale-items/feature-shell/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:resale type:feature-shell"]
+}

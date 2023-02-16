@@ -16,6 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@dev-team-monorepo/common/util": ["packages/common/util/src/index.ts"],
+      "@dev-team-monorepo/resale/sale-items/feature-shell": [
+        "packages/resale/sale-items/feature-shell/src/index.ts"
+      ],
+      "@dev-team-monorepo/resale/sale-items/feature/selling-items-list": [
+        "packages/resale/sale-items/feature/selling-items-list/src/index.ts"
+      ],
       "@dev-team-monorepo/shop/cart/data-access": [
         "packages/shop/cart/data-access/src/index.ts"
       ],

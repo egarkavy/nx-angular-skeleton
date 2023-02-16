@@ -1,0 +1,28 @@
+{
+  "name": "resale-sale-items-feature-selling-items-list",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/resale/sale-items/feature/selling-items-list/src",
+  "prefix": "dev-team-monorepo",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "tsConfig": "packages/resale/sale-items/feature/selling-items-list/tsconfig.spec.json",
+        "karmaConfig": "packages/resale/sale-items/feature/selling-items-list/karma.conf.js",
+        "polyfills": ["zone.js", "zone.js/testing"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/resale/sale-items/feature/selling-items-list/**/*.ts",
+          "packages/resale/sale-items/feature/selling-items-list/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:resale type:feature"]
+}
